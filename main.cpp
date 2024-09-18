@@ -15,7 +15,7 @@ void problem9 (int x , int y);
 void problem10(double a, double b, double c, double d);
 
 int main() {
-    int a,b,c, d;
+    double a,b,c,d;
     cin>>a>>b;
     cin>>c>>d;
     problem10(a,b,c,d);
@@ -88,8 +88,9 @@ void problem9(int x , int y) {
 }
 
 void problem10 (double a, double b, double c, double d) {
-    double price1 = a/b;
-    double price2 = c/d;
+    double price1 = b/a;
+    double price2 = d/c;
+    cout << price1 <<"   " << price2<< endl;
     if (price1 > price2) cout <<"Package 2 has a better price";
     else if (price1 == price2) cout << "Two packages are equal";
     else cout << "Package 1 has a better price";
