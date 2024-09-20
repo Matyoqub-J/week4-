@@ -13,16 +13,18 @@ void problem7 (int a, int b, int c);
 void problem8 (char x);
 void problem9 (int x , int y);
 void problem10(double a, double b, double c, double d);
+void problem11(int x);
+void problem12(char x);
+void problem13(int x, int y);
+void problem14(int x);
+void problem15(int x);
+void problem16(char x);
 
 int main() {
-    double a,b,c,d;
-    cin>>a>>b;
-    cin>>c>>d;
-    problem10(a,b,c,d);
-//    int x, y;
-//    cin >> x >> y;
-//    problem9(x, y);
-//    return 0;
+    char a, b;
+//    cout << "Enter an 3 digit num: ";
+    cin>>a;
+    problem16(a);
 }
 
 void problem1(int x) {
@@ -94,4 +96,71 @@ void problem10 (double a, double b, double c, double d) {
     if (price1 > price2) cout <<"Package 2 has a better price";
     else if (price1 == price2) cout << "Two packages are equal";
     else cout << "Package 1 has a better price";
+}
+
+void problem11( int x ) {
+    int rev = 0;
+    int num = x;
+    while ( x != 0 ) {
+        rev += x % 10;
+        x /= 10;
+        rev *= 10;
+    }
+    rev /= 10;
+    if ( rev == num )   cout << rev << " is a palidrome number"<<endl;
+    else cout << num << " is not a palidrome number" <<endl;
+}
+
+void problem12(char x) {
+    switch (x) {
+        case 'g': cout << "Go!"; break;
+        case 'y': cout << "Get ready!"; break;
+        case 'r': cout << "Stop"; break;
+    }
+}
+
+void problem13( int x, int y ) {
+    cout << "Today is ";
+
+    for (int i = 0; i < 2; i++) {
+        if (i == 1) cout << " the future day is ";
+
+        switch (x) {
+            case 0: cout << "Sunday"; break;
+            case 1: cout << "Monday"; break;
+            case 2: cout << "Tuesday"; break;
+            case 3: cout << "Wednesday"; break;
+            case 4: cout << "Thursday"; break;
+            case 5: cout << "Friday"; break;
+            case 6: cout << "Saturday"; break;
+        }
+        x = (x+y)%7;
+        if ( x == 7 ) x = 0;
+    }
+}
+
+void problem14(int x) {
+    switch (x) {
+        case 0 ... 59: cout << "F"; break;
+        case 60 ... 69: cout << "D"; break;
+        case 70 ... 79: cout << "C"; break;
+        case 80 ... 89: cout << "B"; break;
+        case 90 ... 100: cout << "A"; break;
+    }
+}
+
+void problem15(int x) {
+        if (x== 0) cout<< "zero";
+        else if (x > 0) cout<<"positive";
+        else cout<<"negative";
+}
+
+void problem16(char x) {
+    switch (x) {
+        case 'g': cout << "Hallo"; break;
+        case 'u': cout << "Salom"; break;
+        case 'e': cout << "Hello"; break;
+        case 'r': cout << "Privet"; break;
+        default: cout << " I don't know this number"; break;
+    }
 }
